@@ -25,21 +25,24 @@ app.set("views", "views");
 app.set("view engine", "ejs");
 
 //4: Routing code
-app.get("/", function (req, res) {
-  res.end("<h1>tojimatov abdukarim</h1>");
-});
+// app.get("/", function (req, res) {
+//   res.end("<h1>tojimatov abdukarim</h1>");
+// });
 // app.get("/job", function (req, res) {
 //   res.end("<h1>full stack developer</h1>");
-// });
-// app.get("/occupation", function (req, res) {
-//   res.end("<h1>CEO of Stars of genius</h1>");
 // });
 
 app.get("/author", (req, res) => {
   res.render("author", { user: user });
 });
+app.get("/", function (req, res) {
+  res.render("reja");
+});
+
 const server = http.createServer(app);
 let PORT = 3000;
 server.listen(PORT, function () {
-  console.log(`The Server is running successfully on port ${PORT}`);
+  console.log(
+    `The Server is running successfully on port ${PORT}, http://localhost:${PORT}`
+  );
 });
