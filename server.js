@@ -28,12 +28,12 @@ app.set("view engine", "ejs");
 app.get("/", function (req, res) {
   res.end("<h1>tojimatov abdukarim</h1>");
 });
-app.get("/job", function (req, res) {
-  res.end("<h1>full stack developer</h1>");
-});
-app.get("/occupation", function (req, res) {
-  res.end("<h1>CEO of Stars of genius</h1>");
-});
+// app.get("/job", function (req, res) {
+//   res.end("<h1>full stack developer</h1>");
+// });
+// app.get("/occupation", function (req, res) {
+//   res.end("<h1>CEO of Stars of genius</h1>");
+// });
 
 app.get("/author", (req, res) => {
   res.render("author", { user: user });

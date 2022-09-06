@@ -588,3 +588,66 @@
   position: relative;
   margin-left: 15px;
 }
+.link-href:hover {
+  cursor: pointer;
+  background-color: #ffb400;
+  box-shadow: #ffb400;
+}
+
+.Ellipse01 {
+  box-sizing: border-box;
+  position: absolute;
+  width: 16px;
+  height: 16px;
+  left: 375px;
+  top: 30px;
+  border: 2px solid rgba(0, 71, 255, 0.8);
+  transform: rotate(26.05deg);
+}
+.Ellipse02 {
+  box-sizing: border-box;
+  position: absolute;
+  width: 16px;
+  height: 16px;
+  left: 855px;
+  top: 52px;
+  border: 2px solid rgba(5, 255, 0, 0.8);
+}
+.Ellipse03 {
+  box-sizing: border-box;
+  position: absolute;
+  width: 16px;
+  height: 16px;
+  left: 423px;
+  top: 422px;
+  border: 2px solid rgba(5, 255, 0, 0.8);
+}
+.Ellipse04 {
+  box-sizing: border-box;
+  position: absolute;
+  width: 16px;
+  height: 16px;
+  left: 892px;
+  top: 380px;
+  border: 2px solid rgba(255, 188, 0, 0.8);
+}
+.square01 {
+  box-sizing: border-box;
+  position: absolute;
+  width: 16px;
+  height: 16px;
+  left: 715.83px;
+  top: 333px;
+  border: 2px solid rgba(0, 71, 255, 0.8);
+  transform: rotate(26.05deg);
+}
+.square02 {
+  box-sizing: border-box;
+  position: absolute;
+  width: 16px;
+  height: 16px;
+  left: 1237.46px;
+  top: 69.66px;
+  border: 2px solid rgba(255, 180, 0, 0.8);
+  transform: rotate(26.05deg);
+}
