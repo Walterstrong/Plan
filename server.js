@@ -15,7 +15,7 @@ mongodb.connect(
     else {
       console.log("Databasega muvaffaqiyatli ulandi");
       module.exports = client;
-      const app = require("./app");
+      const app = require("./app.js");
       const server = http.createServer(app);
       let PORT = 3000;
       server.listen(PORT, function () {
