@@ -10,11 +10,6 @@
       integrity="sha384-GJzZqFGwb1QTTN6wy59ffF1BuGJpLSa9DkKMp0DgiMDm4iYMj70gZWKYbI706tWS"
       crossorigin="anonymous"
     />
-    <style>
-      .clean-all {
-        margin-top: 10px;
-      }
-    </style>
   </head>
   <body style="background-color: #b8bbd1">
     <div class="container">
@@ -37,40 +32,42 @@
             </button>
           </div>
         </form>
-        <div>
-          <button
-            id="clean-all"
-            class="btn btn-danger"
-            style="border-radius: 10px"
-          >
-            Hammasini o'chirish
-          </button>
-        </div>
+
         <!-- <%= items[1].reja %> -->
       </div>
+      <div>
+        <button
+          id="clean-all"
+          class="btn btn-danger"
+          style="border-radius: 10px"
+          margin="auto"
+        >
+          Hammasini o'chirish
+        </button>
+      </div>
+      <ul id="item-list" class="list-group pb-5" style="margin-top: 20px">
+        <% items.map(function(item){ %>
+        <li
+          class="list-group-item list-group-item-info d-flex align-itmes-center justify-content-between"
+        >
+          <span class="item-text"><%=item.reja%></span>
+          <div>
+            <button
+              data-id="<%=item._id%>"
+              class="edit-me btn btn-secondary btn-sm mr-1"
+            >
+              Ozgartirish
+            </button>
+            <button
+              data-id="<%=item._id%>"
+              class="delete-me btn btn-secondary btn-sm"
+            >
+              Ochirish
+            </button>
+          </div>
+        </li>
+        <% })%>
+      </ul>
     </div>
-    <ul id="item-list" class="list-group pb-5">
-      <% items.map(function(item){ %>
-      <li
-        class="list-group-item list-group-item-info d-flex align-itmes-center justify-content-between"
-      >
-        <span class="item-text"><%=item.reja%></span>
-        <div>
-          <button
-            data-id="<%=item._id%>"
-            class="edit-me btn btn-secondary btn-sm mr-1"
-          >
-            Ozgartirish
-          </button>
-          <button
-            data-id="<%=item._id%>"
-            class="delete-me btn btn-secondary btn-sm"
-          >
-            Ochirish
-          </button>
-        </div>
-      </li>
-      <% })%>
-    </ul>
   </body>
 </html>
