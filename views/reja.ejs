@@ -11,11 +11,22 @@
       crossorigin="anonymous"
     />
   </head>
-  <body style="background-color: #b8bbd1">
+  <body style="background-color: #096758">
     <div class="container">
-      <h1 class="display-4 text-center py-1">REJA VA MAQSADLAR</h1>
+      <h1
+        class="display-4 text-center py-1"
+        style="
+          background-color: rgb(228, 224, 213);
+          border-radius: 5px;
+          margin-top: 25px;
+          margin-bottom: 25px;
+          font-weight: 300;
+        "
+      >
+        REJA VA MAQSADLAR
+      </h1>
 
-      <div class="jumbotron p-3 shadow-sm">
+      <div class="jumbotron p-3 shadow-lg">
         <form id="create-form" action="/create-item" method="POST">
           <div class="d-flex align-items-center">
             <input
@@ -25,42 +36,35 @@
               autocomplete="off"
               class="form-control mr3"
               type="text"
-              style="flex: 1"
+              style="flex: 2; font-size: larger; background-color: white"
             />
-            <button class="btn btn-primary" style="border-radius: 10px">
+            <button
+              class="btn btn-primary"
+              style="border-radius: 10px; margin-left: 15px"
+            >
               Yangi reja qoshish
             </button>
           </div>
         </form>
-
-        <!-- <%= items[1].reja %> -->
-      </div>
-      <div>
-        <button
-          id="clean-all"
-          class="btn btn-danger"
-          style="border-radius: 10px"
-          margin="auto"
-        >
-          Hammasini o'chirish
-        </button>
       </div>
       <ul id="item-list" class="list-group pb-5" style="margin-top: 20px">
         <% items.map(function(item){ %>
         <li
           class="list-group-item list-group-item-info d-flex align-itmes-center justify-content-between"
+          style="font-size: 20px; color: rgb(8, 62, 7); font-weight: 700"
         >
           <span class="item-text"><%=item.reja%></span>
           <div>
             <button
               data-id="<%=item._id%>"
-              class="edit-me btn btn-secondary btn-sm mr-1"
+              class="edit-me btn btn-secondary btn-dark"
             >
               Ozgartirish
             </button>
             <button
               data-id="<%=item._id%>"
-              class="delete-me btn btn-secondary btn-sm"
+              class="delete-me btn btn-secondary btn-danger"
+              style="margin-left: 15px"
             >
               Ochirish
             </button>
@@ -68,6 +72,17 @@
         </li>
         <% })%>
       </ul>
+      <div>
+        <button
+          id="clean-all"
+          class="btn btn-danger"
+          style="border-radius: 10px"
+        >
+          Hammasini o'chirish
+        </button>
+      </div>
     </div>
+    <script src="https://unpkg.com/axios/dist/axios.min.js"></script>
+    <script src="/browser.js"></script>
   </body>
 </html>
