@@ -9,13 +9,13 @@ function itemTemplate(item) {
       <button
         data-id="${item._id}"
         class="edit-me btn btn-secondary btn-dark" >
-        Ozgartirish
+        editing
       </button>
       <button
         data-id="${item._id}"
         class="delete-me btn btn-secondary btn-danger"
         style="margin-left: 15px" >
-        Ochirish
+        deleting
       </button>
     </div>
   </li>`;

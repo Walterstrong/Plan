@@ -10,6 +10,47 @@
       integrity="sha384-GJzZqFGwb1QTTN6wy59ffF1BuGJpLSa9DkKMp0DgiMDm4iYMj70gZWKYbI706tWS"
       crossorigin="anonymous"
     />
+    <style>
+      .container {
+        margin: auto;
+        text-align: center;
+      }
+      .container > h2 {
+        font-size: 2.7rem;
+        color: #ffffff;
+        font-family: system-ui;
+        margin-bottom: 0;
+      }
+      .container > h3 {
+        font-size: 2.5rem;
+        margin: 0;
+        color: rgb(255, 254, 254);
+        font-family: sans-serif;
+      }
+      .container > .general {
+        display: flex;
+        justify-content: center;
+      }
+      .general > .box {
+        margin: 20px;
+        font-size: 1.5rem;
+        color: rgb(201, 55, 15);
+        font-family: system-ui;
+        font-weight: 1000;
+        font-size: 50px;
+        background-color: #b0ded2;
+        border-radius: 15px;
+      }
+      .box > h4 {
+        background-color: #b0ded2;
+        padding: 0.7rem;
+        color: rgb(8, 62, 7);
+        font-size: 20px;
+        font-weight: 700;
+        border-radius: 15px;
+        text-decoration: underline;
+      }
+    </style>
   </head>
   <body style="background-color: #096758">
     <div class="container">
@@ -23,7 +64,7 @@
           font-weight: 300;
         "
       >
-        REJA VA MAQSADLAR
+        Plans and Goals
       </h1>
 
       <div class="jumbotron p-3 shadow-lg">
@@ -42,7 +83,14 @@
               class="btn btn-primary"
               style="border-radius: 10px; margin-left: 15px"
             >
-              Yangi reja qoshish
+              add new
+            </button>
+            <button
+              id="clean-all"
+              class="btn btn-danger"
+              style="border-radius: 10px; margin-left: 15px"
+            >
+              delete all
             </button>
           </div>
         </form>
@@ -59,30 +107,82 @@
               data-id="<%=item._id%>"
               class="edit-me btn btn-secondary btn-dark"
             >
-              Ozgartirish
+              editing
             </button>
             <button
               data-id="<%=item._id%>"
               class="delete-me btn btn-secondary btn-danger"
               style="margin-left: 15px"
             >
-              Ochirish
+              deleting
             </button>
           </div>
         </li>
         <% })%>
       </ul>
       <div>
-        <button
+        <!-- <button
           id="clean-all"
           class="btn btn-danger"
-          style="border-radius: 10px"
+          style="border-radius: 10px; align-items: left"
         >
           Hammasini o'chirish
-        </button>
+        </button> -->
+      </div>
+      <div class="container">
+        <h2 style="align-items: center; text-decoration: underline">
+          Dear all!
+        </h2>
+        <h3 style="margin: top 10px">Times left to finish course</h3>
+
+        <div class="general">
+          <div class="box">
+            <h2 id="lesson"></h2>
+            <h4>LESSONS</h4>
+          </div>
+          <div class="box">
+            <h2 id="days"></h2>
+            <h4>DAYS</h4>
+          </div>
+          <div class="box">
+            <h2 id="hours"></h2>
+            <h4>HOURS</h4>
+          </div>
+          <div class="box">
+            <h2 id="minutes"></h2>
+            <h4>MINUTES</h4>
+          </div>
+          <div class="box">
+            <h2 id="seconds"></h2>
+            <h4>SECONDS</h4>
+          </div>
+        </div>
+      </div>
+      <div class="container" style="margin: margin-top:15px;">
+        <h1 style="margin-top: 40px; color: #ffffff">
+          Today is better twice than tomorrow
+        </h1>
       </div>
     </div>
     <script src="https://unpkg.com/axios/dist/axios.min.js"></script>
     <script src="/browser.js"></script>
+    <script type="text/javascript">
+      var count = new Date("dec 14, 2022 00:00:00").getTime();
+      var x = setInterval(function () {
+        var now = new Date().getTime();
+        var d = count - now;
+
+        var days = Math.floor(d / (1000 * 60 * 60 * 24));
+        var hours = Math.floor((d % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60));
+        var minutes = Math.floor((d % (1000 * 60 * 60)) / (1000 * 60));
+        var seconds = Math.floor((d % (1000 * 60)) / 1000);
+        var lesson = Math.floor(52 - 12);
+        document.getElementById("days").innerHTML = days;
+        document.getElementById("hours").innerHTML = hours;
+        document.getElementById("minutes").innerHTML = minutes;
+        document.getElementById("seconds").innerHTML = seconds;
+        document.getElementById("lesson").innerHTML = lesson;
+      }, 1000);
+    </script>
   </body>
 </html>
